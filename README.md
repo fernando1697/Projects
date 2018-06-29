@@ -1,3 +1,3 @@
 # Python
 
-TESTE DE PYTHON
+Dentro deste repositorio se encontram programas com a linguagem python
