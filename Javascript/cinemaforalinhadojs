@@ -1,0 +1,5 @@
+for (var x = 0; x <= 25; x = x + 1) { // Primeiro for
+  for (var y = 0; y <=99; y = y + 1) { // for que executa dentro do primeiro for
+    console.log(x + "-" + y);
+  }
+}
