@@ -1,0 +1,6 @@
+var n = 1;
+for(var x = 1 ; x<=6;x++){
+    var n = x*n;
+    console.log(n);
+  
+}
