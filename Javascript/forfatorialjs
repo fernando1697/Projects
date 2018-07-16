@@ -1,6 +1,6 @@
 var n = 1;
-for(var x = 1 ; x<=6;x++){
-    var n = x*n;
-    console.log(n);
+for(var x = 1 ; x<=6;x++){ //Loop com o x <= o valor do fatorial    
+    var n = x*n; //multiplicação do fatorial
+    console.log(n); //print dos passos
   
 }
