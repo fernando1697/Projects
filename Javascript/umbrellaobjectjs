@@ -1,0 +1,40 @@
+var umbrella = {
+
+color :"pink",
+isOpen : true,
+open: function(){
+if(umbrella.isOpen == true){
+
+  return  "already open"
+
+
+}else{
+    umbrella.isOpen = true;
+  return "Your umbrella is closed lets open!"
+
+}
+
+
+},
+
+close: function(){
+if(umbrella.isOpen == false){
+
+  return  "already closed"
+
+
+}else{
+    umbrella.isOpen = false;
+  return "Your umbrella is closed now!"
+
+}
+
+
+
+}
+
+
+}
+umbrella.close();
+
+
