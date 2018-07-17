@@ -1,0 +1,26 @@
+var facebookProfile = {
+    name: "Philip Obiorah",
+    friends: 1203,
+    messages: ["Un Easy lies the head.. ", "A candle.... ", "Thanking God... ", "My Super Mums "],
+       
+    postMessage: function(message){   //adds a new message string to the array
+        facebookProfile.messages.push(message);
+    },
+    
+    deleteMessage: function(index){    //removes the message corresponding to the index provided
+        facebookProfile.messages.splice(index,1);
+    },
+    
+    addFriend: function(){     //increases the friend count by 1
+        facebookProfile.friends +=1;
+    },
+    
+    removeFriend: function(){    //decreases the friend count by 1
+         facebookProfile.friends -=1;
+    },
+    
+    
+ 
+};    facebookProfile.addFriend();
+      facebookProfile.postMessage("HEY");
+      console.log(facebookProfile.friends)
