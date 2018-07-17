@@ -24,7 +24,10 @@
 	<script>
 		angular.module("ListaTelefonica",[]);
 		angular.module("ListaTelefonica").controller("ListaTelefonicaCtrl",function ($scope) {
-			
+			$scope.removerContato = function(){
+				$scope.contatos.pop();
+
+			}
 			$scope.adicionarContato = function(nome,telefone){
 				$scope.contatos.push({nome:nome,telefone:telefone});
 
@@ -68,6 +71,8 @@
 		<hr/>
 		<button class="btn btn-primary btn-block" 
 		ng-click ="adicionarContato(nome,telefone)">Adicionar Contato</button>
+		<button class="btn btn-primary btn-block" 
+		ng-click ="removerContato()">Remover Contato</button>
 		
 	</div>
 
