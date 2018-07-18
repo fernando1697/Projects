@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app = "ListaTelefonica">
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<style>
+	.jumbotron{
+		width:400px;
+		text-align: center;
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.table{
+
+		margin-top: 20px;
+	}
+	.form-control{
+		margin-bottom: 5px;
+	}
+	</style>
+	<script src="angular.js"></script>
+	<script>
+		angular.module("ListaTelefonica",[]);
+		angular.module("ListaTelefonica").controller("ListaTelefonicaCtrl",function ($scope) {
+				
+			$scope.removerContato = function(){
+				var senha = prompt("Insira sua senha de administrador");
+				if(senha =="123456"){
+
+					//alert("Ultimo contato deletado");
+					
+					$scope.contatos.pop();
+
+				}else{
+					alert("voce nao tem permissao");
+					
+				}
+				
+			}
+			$scope.adicionarContato = function(nome,telefone){
+				$scope.contatos.push({nome:nome,telefone:telefone,});
+
+
+			};
+			$scope.app = "Lista Telefonica";
+			$scope.message = "Teste";
+			$scope.contatos = [{
+				nome:"Pedro",telefone:"99001123"
+			},
+			{
+				nome:"Maria",telefone:"123124332"
+			},
+
+			{
+				nome:"Ana",telefone:"9192192131"
+			}
+
+
+			];
+		});
+	</script>
+</head>
+<body ng-controller = "ListaTelefonicaCtrl">
+	<div class="jumbotron">
+		<h3>{{app}}</h3>	
+		<table class="table table-striped">
+			<tr>
+				<th>Nome</th>
+				<th>Telefone</th>
+			</tr>
+			<tr ng-repeat = "contato in contatos">
+			<td>{{contato.nome}}</td>
+			<td>{{contato.telefone}}</td>
+			</tr>
+		</table>
+		<hr/>
+		<input type="text" ng-model = "nome" placeholder="Nome" />
+		<input type="text" ng-model ="telefone" placeholder="Telefone" />
+		<hr/>
+		<button class="btn btn-primary btn-block" 
+		ng-click ="adicionarContato(nome,telefone)">Adicionar Contato</button>
+		<button class="btn btn-primary btn-block" 
+		ng-click ="removerContato()">Remover Contato</button>
+		
+		
+	</div>
+
+</body>
+</html>
