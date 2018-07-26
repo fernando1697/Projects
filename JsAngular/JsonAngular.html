@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app = "Json">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css">
+<script src="angular/angular.js"></script>
+<script src="angular/angular-messages.js"></script>
+<script type="text/javascript">
+	
+
+angular.module("Json", []);
+angular.module("Json").controller("JsonCtrl", function ($scope, $http) {
+$scope.app = "Json is Working bro";
+$scope.times  = [
+
+			{}
+
+
+];
+			
+
+			var carregarContatos = function(){
+			 $http.get("https://worldcup.sfg.io/teams/").then(function(data){
+
+			 	$scope.times = data;
+		
+
+			});
+			
+				}
+
+
+
+carregarContatos();
+
+});
+
+</script>
+
+<head>
+	<title>Json Worlds</title>
+</head>
+<body ng-controller="JsonCtrl">
+
+	<h3>{{times}}</h3>
+
+</body>
+</html>
