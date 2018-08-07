@@ -1,0 +1,11 @@
+ //Um testeModelo com input ngmodel no html onde dita a resposta da url
+    $scope.carregarDados = function () {
+        console.log("oie");
+        $http.get("https://worldcup.sfg.io/teams/"+$scope.testeModelo).then(function (data) {
+
+            $scope.type = data;
+
+
+        });
+
+    };
